@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,16 @@ public class PlayerController : MonoBehaviour
     public Vector2 moveValue;
     public float speed;
     private int count;
+    private int numPickups = 6; // Put here the number of pickups you have .
+    public TextMeshProUGUI ScoreText;
+    public TextMeshProUGUI WinText;
+
+    void Start()
+    {
+        count = 0;
+        WinText.text = " ";
+        SetCountText();
+    }
 
     void OnMove(InputValue value)
     {
@@ -25,17 +36,22 @@ public class PlayerController : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(movement*speed*Time.fixedDeltaTime);
     }
 
-    void Start()
-    {
-        count = 0;
-    }
-
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "PickUp")
         {
+            other.gameObject.SetActive(false);
             count++;
-            other.gameObject.SetActive(false); 
+            SetCountText();
         }
-    }    
+    }
+
+    private void SetCountText()
+    {
+        ScoreText.text = " Score : " + count.ToString();
+        if (count >= numPickups)
+        {
+            WinText.text = " You win ! ";
+        }
+    }
 }
