@@ -574,7 +574,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -596,7 +596,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -814,6 +814,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1487546591}
     m_Modifications:
+    - target: {fileID: -5172589481989003243, guid: 261142fc5fa4ef44aaf007399e803e9f, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2440746121027723879, guid: 261142fc5fa4ef44aaf007399e803e9f, type: 3}
       propertyPath: m_Name
       value: PickUp (2)
@@ -892,6 +896,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1487546591}
     m_Modifications:
+    - target: {fileID: -5172589481989003243, guid: 261142fc5fa4ef44aaf007399e803e9f, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2440746121027723879, guid: 261142fc5fa4ef44aaf007399e803e9f, type: 3}
       propertyPath: m_Name
       value: PickUp
@@ -1170,6 +1178,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1487546591}
     m_Modifications:
+    - target: {fileID: -5172589481989003243, guid: 261142fc5fa4ef44aaf007399e803e9f, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2440746121027723879, guid: 261142fc5fa4ef44aaf007399e803e9f, type: 3}
       propertyPath: m_Name
       value: PickUp (3)
@@ -1829,6 +1841,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1487546591}
     m_Modifications:
+    - target: {fileID: -5172589481989003243, guid: 261142fc5fa4ef44aaf007399e803e9f, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2440746121027723879, guid: 261142fc5fa4ef44aaf007399e803e9f, type: 3}
       propertyPath: m_Name
       value: PickUp (4)
@@ -1938,7 +1954,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -2076,6 +2092,8 @@ MonoBehaviour:
   speed: 500
   ScoreText: {fileID: 262238926}
   WinText: {fileID: 1527125382}
+  PlayerPosition: {fileID: 1682833004}
+  PlayerVelocity: {fileID: 166512751}
 --- !u!1 &1631190584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,6 +2137,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1487546591}
     m_Modifications:
+    - target: {fileID: -5172589481989003243, guid: 261142fc5fa4ef44aaf007399e803e9f, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2440746121027723879, guid: 261142fc5fa4ef44aaf007399e803e9f, type: 3}
       propertyPath: m_Name
       value: PickUp (5)
@@ -2326,6 +2348,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1487546591}
     m_Modifications:
+    - target: {fileID: -5172589481989003243, guid: 261142fc5fa4ef44aaf007399e803e9f, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2440746121027723879, guid: 261142fc5fa4ef44aaf007399e803e9f, type: 3}
       propertyPath: m_Name
       value: PickUp (1)
@@ -2446,7 +2472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2106631929
 RectTransform:
   m_ObjectHideFlags: 0

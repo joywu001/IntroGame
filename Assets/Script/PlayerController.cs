@@ -16,11 +16,20 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI WinText;
 
+    private Vector3 oldPosition;
+    private Vector3 velocity;
+    private float scalarSpeed;
+
+    public TextMeshProUGUI PlayerPosition;
+    public TextMeshProUGUI PlayerVelocity;
+
     void Start()
     {
         count = 0;
         WinText.text = " ";
         SetCountText();
+
+        oldPosition = transform.position;
     }
 
     void OnMove(InputValue value)
@@ -32,8 +41,10 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 movement = new Vector3(moveValue.x, 0.0f, moveValue.y);
-
         GetComponent<Rigidbody>().AddForce(movement*speed*Time.fixedDeltaTime);
+
+        CalculateVelocity();
+        oldPosition = transform.position;
     }
 
     void OnTriggerEnter(Collider other)
@@ -53,5 +64,15 @@ public class PlayerController : MonoBehaviour
         {
             WinText.text = " You win ! ";
         }
+    }
+
+    private void CalculateVelocity()
+    {
+        velocity = (transform.position - oldPosition)/Time.deltaTime;
+        scalarSpeed = velocity.magnitude;
+
+        PlayerPosition.text = "Position: " + transform.position.ToString("0.00");
+        PlayerVelocity.text = "Speed: " + scalarSpeed.ToString("0.00");
+        
     }
 }
