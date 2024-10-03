@@ -44,7 +44,6 @@ public class PlayerController : MonoBehaviour
         GetComponent<Rigidbody>().AddForce(movement*speed*Time.fixedDeltaTime);
 
         CalculateVelocity();
-        oldPosition = transform.position;
     }
 
     void OnTriggerEnter(Collider other)
@@ -71,8 +70,9 @@ public class PlayerController : MonoBehaviour
         velocity = (transform.position - oldPosition)/Time.deltaTime;
         scalarSpeed = velocity.magnitude;
 
+        oldPosition = transform.position;
+
         PlayerPosition.text = "Position: " + transform.position.ToString("0.00");
         PlayerVelocity.text = "Speed: " + scalarSpeed.ToString("0.00");
-        
     }
 }
